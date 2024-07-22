@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+
+* {
+    font-family: "Epilogue", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+.nav {
+    background-color: #711DB0;
+    padding: 10pt 15pt;
+    display: flex;
+    justify-content: space-between;
+}
+
+#disconnect-btn {
+    font-size: 10pt;
+    color: white;
+}
+
+#disconnect-btn:hover {
+    font-weight: bold;
+}
+
+ #back-btn:hover {
+    font-weight: bold;
+ }
+
+.row {
+    display: flex;
+}
+
+.column {
+    width: 60%;
+    float: left;
+    text-align: center;
+    color: #711DB0;
+}
+
+.group-list-container {
+    float: left;
+    width: 40%;
+    text-align: left;    
+}
+
+.group-container {
+    padding: 10pt 12pt;
+    height: min-content;
+    color: #711DB0;
+}
+
+div.impare {
+    color: black;
+    background-color: #D9D9D9;
+}
+
+.group-container:hover {
+    cursor: pointer;
+}
+
+h3 {
+    margin-top: 10%;
+}
+
+.group-name {
+    font-size: 12pt;
+    margin-bottom: 7pt;
+}
+
+.group-members {
+    font-size: 10pt;
+}
+
+a {
+    text-decoration: none;
+ }
+ .login-form {
+    justify-content: center;
+    align-items: center;
+ }
+
+.login-input {
+    padding: 7pt 10pt;
+    margin-right: 10pt;
+    margin-top: 15pt;
+    border: 1pt solid #711DB0;
+ }
+
+ .login-input:focus {
+    outline: 2pt solid #711DB0;
+ }
+
+ #group-btn {
+    padding: 7pt 10pt;
+    font-weight: bold;
+    color: white;
+    background-color: #711DB0;
+    border: 1pt solid #711DB0;
+    margin-top: 15pt;
+ }
+
+ #group-btn:hover {
+    color: #711DB0;
+    background-color: white;
+    border: 1pt solid #711DB0;
+    cursor: pointer;
+ }
+
+ #group-btn:active {
+    color: white;
+    background-color: #FFA732;
+    border: 1pt solid #FFA732;
+    cursor: pointer;
+ }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Chatter</title>
+</head>
+
+<body>
+    <header class="nav">
+        <a href="home.html" id="back-btn">&larr; Back</a>
+        <a href="/logout" id="disconnect-btn">Disconnect</a>
+    </header>
+    <main class="row">
+        <div class="group-list-container column">
+            <a href="chat.html">
+                <div class="group-container impare">
+                    <h4 class="group-name">Group Name</h4>
+                    <p class="group-members">Member#1, Member#2, Member#3</p>
+                </div>
+            </a>
+            <a href="chat.html">
+                <div class="group-container">
+                    <h4 class="group-name">Group Name</h4>
+                    <p class="group-members">Member#1, Member#2, Member#3</p>
+                </div>
+            </a>
+        </div>
+        <div class="column">
+            <form id="group-creation">
+                <input id="group-name" class="login-input" type="text" placeholder="Group name" maxlength=><br>
+                <input id="firstID" class="login-input" type="text" placeholder="ID of the first user" maxlength="13" required><br>
+                <input id="secondID" class="login-input" type="text" placeholder="ID of the second user" maxlength="13" required><br>
+                <input id="thirdID" class="login-input" type="text" placeholder="ID of the third user" maxlength="13"><br>
+                <input id="fourthID" class="login-input" type="text" placeholder="ID of the fourth user" maxlength="13"><br>
+                <button id="group-btn" type="submit">Create the group</button>
+            </form>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="js/main.js"></script>
+    </main>
+</body>
+</html>

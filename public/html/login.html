@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Epilogue", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        #login-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10%;
+            color: #711DB0;
+            font-weight: bold;
+            margin-bottom: 20pt;
+        }
+
+        #login {
+            width: 170pt;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-input {
+            width: 148pt;
+            padding: 7pt 10pt;
+            border: 1pt solid #711DB0;
+            margin-bottom: 10pt;
+        }
+
+        .login-input:focus {
+            outline: 2pt solid #711DB0;
+        }
+
+        #login-btn {
+            width: 100%;
+            padding: 7pt 10pt;
+            font-weight: bold;
+            color: white;
+            background-color: #711DB0;
+            border: 1pt solid #711DB0;
+        }
+
+        #login-btn:hover {
+            color: #711DB0;
+            background-color: white;
+            border: 1pt solid #711DB0;
+            cursor: pointer;
+        }
+
+        #login-btn:active {
+            background-color: #FFA732;
+            border: 1pt solid #FFA732;
+            color: white;
+        }
+
+        #signup {
+            text-align: center;
+            margin-top: 10pt;
+            font-size: 10pt;
+        }
+
+        #signup-link {
+            color: #711DB0;
+        }
+
+        #signup-link:hover {
+            text-decoration: underline;
+        }
+
+        #signup-link:active {
+            color: #FFA732;
+        }
+    </style>
+    <title>Chatter</title>
+</head>
+
+<body>
+    <main>
+        <h2 id="login-title">Login</h2>
+        <div id="login">
+            <form id="login-form" method="post" action="/auth">
+                <input name="username" id="username" class="login-input" type="text" placeholder="Username" maxlength="13"><br>
+                <input name="password" id="user-password" class="login-input" type="password" placeholder="Password"><br>
+                <input id="login-btn" type="submit" value="Login">
+            </form>
+            <p id="signup">Don't have an account? <a href="signup.html" id="signup-link">Make one</a></p>
+        </div>
+        <div id="message-container"></div>
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

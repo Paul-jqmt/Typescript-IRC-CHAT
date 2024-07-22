@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Chatter</title>
+    <style>
+        * {
+            font-family: "Epilogue", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        /* ======== Home Page ======== */
+
+        .nav {
+            background-color: #711DB0;
+            padding: 10pt 15pt;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #disconnect-btn {
+            font-size: 10pt;
+            color: white;
+        }
+
+        #disconnect-btn:hover {
+            font-weight: bold;
+        }
+
+        #back-btn {
+            color: white;
+            text-decoration: none;
+            font-size: 10pt;
+        }
+
+        #back-btn:hover {
+            font-weight: bold;
+        }
+
+        .main-page {
+            width: fit-content;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10%;
+        }
+
+        h2 {
+            color: #711DB0;
+            margin-bottom: 20pt;
+        }
+
+        #menu-list {
+            list-style-type: none;
+            text-align: center;
+        }
+
+        .menu-item {
+            margin-bottom: 10pt;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="nav">
+        <a href="login.html" id="back-btn">&larr; Back</a>
+        <a href="/logout" id="disconnect-btn">Disconnect</a>
+    </header>
+    <main class="main-page">
+        <h2>Hello, world!</h2>
+        <ul id="menu-list">
+            <li id="group_chat_anchor" class="menu-item"><a href="chat.html" style="color: #EF4040;">Chat Group</a></li>
+            <li class="menu-item"><a href="groups.html" style="color: #C21292;">Groups</a></li>
+            <li class="menu-item"><a href="private.html" style="color: #EF4040;">Private</a></li>
+        </ul>
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+</body>
+</html>

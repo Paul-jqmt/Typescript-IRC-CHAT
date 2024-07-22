@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatter</title>
+    <style>
+
+* {
+    font-family: "Epilogue", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+        /* ======== Chat Page ======== */
+
+         
+.nav {
+    background-color: #711DB0;
+    padding: 10pt 15pt;
+    display: flex;
+    justify-content: space-between;
+}
+
+#disconnect-btn {
+    font-size: 10pt;
+    color: white;
+}
+
+#disconnect-btn:hover {
+    font-weight: bold;
+}
+
+#back-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 10pt;
+ }
+
+ #back-btn:hover {
+    font-weight: bold;
+ }
+
+.chat-container{
+    margin: 10pt
+}
+
+.message-container {
+    border: 1pt solid #FFA732;
+    color: #FFA732;
+    padding: 10pt;
+    font-size: 10pt;
+    margin-bottom: 10pt;
+}
+
+
+
+.user-message {
+    background-color: #FFA732;
+    color: white;
+}
+
+.connection-message {
+    background-color: #32b4ff;
+    color: white;
+}
+
+#chat-form {
+    position:fixed ;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    bottom: 0;
+    padding: 12pt 10pt;
+}
+
+#message-input {
+    padding: 5pt 10pt;
+    width: calc(100% - 120pt);
+    border: 2pt solid #FFA732;
+    margin-right: 10pt;
+    margin-left: 10pt;
+}
+
+#message-input:focus {
+    outline: none;
+    border: 2pt solid #711DB0;
+}
+
+#send-btn {
+    padding: 5pt 10pt;
+    background-color: #FFA732;
+    border: 2pt solid #FFA732;
+    color: white;
+    font-weight: bold;
+}
+
+#send-btn:hover {
+    background-color: white;
+    color: #FFA732;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#send-btn:active {
+    background-color: #711DB0;
+    border: 2pt solid #711DB0;
+    color: white;
+}
+
+    </style>
+</head>
+
+<body>
+    <header class="nav">
+        <a href="javascript:history.back()" id="back-btn">&larr; Back</a>
+        <a href="/logout" id="disconnect-btn">Disconnect</a>
+    </header>
+    <main>
+        <div id="chat">
+            <div class="chat-container">
+                <!-- <div class="message-container">
+                    <p>This is your message</p>
+                </div>
+                <div class="message-container user-message">
+                     <p>This is my message</p> 
+                </div>
+                <div class="message-container connection-message">
+                     <p>This is my message</p> 
+                </div> -->
+            </div>
+            <form id="chat-form">
+                <input type="text" , id="message-input" autocomplete="off">
+                <input type="submit" id="send-btn" value="Send">
+            </form>
+        </div>
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

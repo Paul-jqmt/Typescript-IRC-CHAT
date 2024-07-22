@@ -1,0 +1,23 @@
+Nous souhaitons créer un chat permettant à un utilisateur de :
+-s'incrire, 
+-puis de se connecter 
+-et d'envoyer des messages aux autres utilisateurs
+
+Il va falloir récuperer sur nos pages les informations suivantes de l'utilisateur : 
+-son id
+-son username
+-s'assurer qu'il est bien connecté
+
+Pour démarrer un serveur, nous utiliserons express, et pour échanger des informations entre le script et le serveur
+nous utiliserons socket.io
+
+Pour chaque page nous allons créer une route permettant de rediriger vers cette page.
+A chaque fois qu'un utilisateur ira sur une route , nous voulons vérifier si :
+-Il est connecté
+-Sur certaines pages :
+    - s'il a le role admin (1);
+
+Si nous passons un formulaire, notre route devra effectuer une requête SQL permettant d'afficher les informations souhaitées
+Ensuite nous voulons envoyer un message depuis le script vers le serveur pour annoncer que nous sommes connectés
+Si le serveur le reçoit, il peut alors effectuer différentes fonctions.
+
